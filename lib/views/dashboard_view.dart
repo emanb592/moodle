@@ -62,7 +62,7 @@ class DashboardView extends StatelessWidget {
             backgroundColor: Color(0xFFE9ECEF),
             foregroundColor: Color(0xFF5D2D5F),
             child: Text(
-              'YH', // Initials for "Yourname Here"
+              'YH', // Initials: Students must change this to their actual initials
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
             ),
           ),
@@ -110,7 +110,7 @@ class DashboardView extends StatelessWidget {
                       ),
                       SizedBox(height: 12),
                       Text(
-                        'This is a placeholder block. Students must implement features like Search Courses, Timeline, or Recently Accessed Items here.',
+                        'This is a placeholder block.',
                         style: TextStyle(fontSize: 14, color: Colors.black54),
                       ),
                     ],
@@ -142,7 +142,7 @@ class DashboardView extends StatelessWidget {
                       ),
                       SizedBox(height: 12),
                       Text(
-                        'This is a placeholder block. Students must implement features like the mini Calendar view here.',
+                        'This is a placeholder block.',
                         style: TextStyle(fontSize: 14, color: Colors.black54),
                       ),
                     ],

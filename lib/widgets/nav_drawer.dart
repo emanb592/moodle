@@ -13,7 +13,38 @@ class NavDrawer extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            const SizedBox(height: 16),
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xFF4A204C), // Slightly darker purple header
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CircleAvatar(
+                    radius: 26,
+                    backgroundColor: Colors.white,
+                    child: Icon(Icons.person, size: 30, color: Color(0xFF5D2D5F)),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Yourname Here', // Student placeholder name
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    'up1234567@myport.ac.uk', // Student placeholder email
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             ListTile(
               leading: const Icon(Icons.speed_outlined, color: Colors.white),
               title: const Text(

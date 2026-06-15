@@ -62,7 +62,7 @@ class CoursesView extends StatelessWidget {
             backgroundColor: Color(0xFFE9ECEF),
             foregroundColor: Color(0xFF5D2D5F),
             child: Text(
-              'YH', // Initials for "Yourname Here"
+              'YH', // Initials: Students must change this to their actual initials
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
             ),
           ),
