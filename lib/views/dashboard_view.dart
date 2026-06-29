@@ -17,13 +17,18 @@ class DashboardView extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 16),
-                width: 32,
-                height: 32,
-                child: Image.asset(
-                  'images/moodle_logo.png',
-                  fit: BoxFit.contain,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/');
+                },
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 16),
+                  width: 32,
+                  height: 32,
+                  child: Image.asset(
+                    'images/moodle_logo.png',
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
               const Text(
