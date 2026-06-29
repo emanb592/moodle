@@ -47,14 +47,58 @@ class DashboardView extends StatelessWidget {
             onPressed: () {},
           ),
           const SizedBox(width: 8),
-          const CircleAvatar(
-            radius: 18,
-            backgroundColor: moodleGrayBg,
-            foregroundColor: moodlePurple,
-            child: Text(
-              'YH',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+          PopupMenuButton<String>(
+            child: const CircleAvatar(
+              radius: 16,
+              backgroundColor: moodleSecondary,
+              child: Text('EB'),
             ),
+            onSelected: (value) {
+              Navigator.pushReplacementNamed(context, value);
+            },
+            itemBuilder: (BuildContext context) => [
+              const PopupMenuItem<String>(
+                value: '/profile',
+                child: Row(
+                  children: [
+                    Icon(Icons.person_outlined),
+                    SizedBox(width: 8),
+                    Text('Profile'),
+                  ],
+                ),
+              ),
+              const PopupMenuItem<String>(
+                value: '/grades',
+                child: Row(
+                  children: [
+                    Icon(Icons.grade),
+                    SizedBox(width: 8),
+                    Text('Grades'),
+                  ],
+                ),
+              ),
+              const PopupMenuItem<String>(
+                value: '/settings',
+                child: Row(
+                  children: [
+                    Icon(Icons.settings),
+                    SizedBox(width: 8),
+                    Text('Settings'),
+                  ],
+                ),
+              ),
+              const PopupMenuDivider(),
+              const PopupMenuItem<String>(
+                value: '/logout',
+                child: Row(
+                  children: [
+                    Icon(Icons.logout),
+                    SizedBox(width: 8),
+                    Text('Logout'),
+                  ],
+                ),
+              ),
+            ],
           ),
           const SizedBox(width: 16),
         ],
