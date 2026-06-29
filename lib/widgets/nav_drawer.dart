@@ -9,47 +9,15 @@ class NavDrawer extends StatelessWidget {
     final currentRoute = ModalRoute.of(context)?.settings.name ?? '/';
     final bool isDashboard = currentRoute == '/';
     final bool isCourses = currentRoute == '/courses';
+    final bool isAssessments = currentRoute == '/assessments';
+    final bool isProfile = currentRoute == '/profile';
 
     return Drawer(
-      backgroundColor: moodlePurple,
       child: SafeArea(
         child: ListView(
-          padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: moodleDarkPurple,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  CircleAvatar(
-                    radius: 26,
-                    backgroundColor: moodleWhite,
-                    child: Icon(Icons.person, size: 30, color: moodlePurple),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Emmanuel Barker',
-                    style: TextStyle(
-                      color: moodleWhite,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text(
-                    'up2276755@myport.ac.uk',
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 12,
-                    ),
-                  ),
-                ],
-              ),
-            ),
             ListTile(
-              leading: const Icon(Icons.speed_outlined, color: moodleWhite),
+              leading: const Icon(Icons.home_outlined, color: moodleWhite),
               title: const Text(
                 'Dashboard',
                 style: TextStyle(color: moodleWhite, fontSize: 16),
@@ -64,20 +32,9 @@ class NavDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.calendar_month_outlined, color: moodleWhite),
+              leading: const Icon(Icons.book_outlined, color: moodleWhite),
               title: const Text(
-                'Calendar',
-                style: TextStyle(color: moodleWhite, fontSize: 16),
-              ),
-              onTap: () {
-                // placeholder
-              },
-            ),
-
-            ListTile(
-              leading: const Icon(Icons.school_outlined, color: moodleWhite),
-              title: const Text(
-                'My courses',
+                'My Courses',
                 style: TextStyle(color: moodleWhite, fontSize: 16),
               ),
               selected: isCourses,
@@ -86,6 +43,36 @@ class NavDrawer extends StatelessWidget {
                 Navigator.pop(context);
                 if (!isCourses) {
                   Navigator.pushReplacementNamed(context, '/courses');
+                }
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.assignment_outlined, color: moodleWhite),
+              title: const Text(
+                'Assessments',
+                style: TextStyle(color: moodleWhite, fontSize: 16),
+              ),
+              selected: isAssessments,
+              selectedTileColor: Colors.white24,
+              onTap: () {
+                Navigator.pop(context);
+                if (!isAssessments) {
+                  Navigator.pushReplacementNamed(context, '/assessments');
+                }
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.person_outlined, color: moodleWhite),
+              title: const Text(
+                'Profile',
+                style: TextStyle(color: moodleWhite, fontSize: 16),
+              ),
+              selected: isProfile,
+              selectedTileColor: Colors.white24,
+              onTap: () {
+                Navigator.pop(context);
+                if (!isProfile) {
+                  Navigator.pushReplacementNamed(context, '/profile');
                 }
               },
             ),
