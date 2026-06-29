@@ -13,9 +13,43 @@ class NavDrawer extends StatelessWidget {
     final bool isProfile = currentRoute == '/profile';
 
     return Drawer(
+      backgroundColor: moodlePurple,
       child: SafeArea(
         child: ListView(
+          padding: EdgeInsets.zero,
           children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: moodleDarkPurple,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CircleAvatar(
+                    radius: 26,
+                    backgroundColor: moodleWhite,
+                    child: Icon(Icons.person, size: 30, color: moodlePurple),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Emmanuel Barker',
+                    style: TextStyle(
+                      color: moodleWhite,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    'up2276755@myport.ac.uk',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             ListTile(
               leading: const Icon(Icons.home_outlined, color: moodleWhite),
               title: const Text(

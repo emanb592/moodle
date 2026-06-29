@@ -3,6 +3,7 @@ import 'package:moodle/views/dashboard_view.dart';
 import 'package:moodle/views/courses_view.dart';
 import 'package:moodle/views/assessments_view.dart';
 import 'package:moodle/views/profile_view.dart';
+import 'package:moodle/constants.dart';
 
 void main() {
   runApp(const MoodleApp());
@@ -15,13 +16,23 @@ class MoodleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Moodle',
-      home: const DashboardView(),
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: moodlePurple,
+          primary: moodlePurple,
+          secondary: moodleSecondary,
+          surface: moodleSurface,
+        ),
+      ),
+      initialRoute: '/',
       routes: {
         '/': (context) => const DashboardView(),
         '/courses': (context) => const CoursesView(),
         '/assessments': (context) => const AssessmentsView(),
         '/profile': (context) => const ProfileView(),
       },
+      debugShowCheckedModeBanner: false,
     );
   }
 }
