@@ -31,9 +31,14 @@ class DashboardView extends StatelessWidget {
                   ),
                 ),
               ),
-              const Text(
-                'Dashboard',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/');
+                },
+                child: const Text(
+                  'Dashboard',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
               ),
             ],
           ),

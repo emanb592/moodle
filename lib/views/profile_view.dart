@@ -31,9 +31,14 @@ class ProfileView extends StatelessWidget {
                   ),
                 ),
               ),
-              const Text(
-                'Profile',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/');
+                },
+                child: const Text(
+                  'Profile',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
               ),
             ],
           ),

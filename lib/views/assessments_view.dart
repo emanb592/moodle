@@ -31,9 +31,14 @@ class AssessmentsView extends StatelessWidget {
                   ),
                 ),
               ),
-              const Text(
-                'Assessments',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/');
+                },
+                child: const Text(
+                  'Assessments',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
               ),
             ],
           ),

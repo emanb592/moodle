@@ -31,9 +31,14 @@ class CoursesView extends StatelessWidget {
                   ),
                 ),
               ),
-              const Text(
-                'My courses',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/');
+                },
+                child: const Text(
+                  'My courses',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
               ),
             ],
           ),
