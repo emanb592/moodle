@@ -36,7 +36,7 @@ class ProfileView extends StatelessWidget {
                   Navigator.pushReplacementNamed(context, '/');
                 },
                 child: const Text(
-                  'Profile',
+                  '',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
               ),

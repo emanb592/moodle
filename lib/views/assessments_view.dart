@@ -36,7 +36,7 @@ class AssessmentsView extends StatelessWidget {
                   Navigator.pushReplacementNamed(context, '/');
                 },
                 child: const Text(
-                  'Assessments',
+                  '',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
               ),

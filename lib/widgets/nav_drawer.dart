@@ -10,6 +10,7 @@ class NavDrawer extends StatelessWidget {
     final bool isDashboard = currentRoute == '/';
     final bool isCourses = currentRoute == '/courses';
     final bool isAssessments = currentRoute == '/assessments';
+    final bool isCalendar = currentRoute == '/calendar';
     final bool isProfile = currentRoute == '/profile';
 
     return Drawer(
@@ -68,7 +69,7 @@ class NavDrawer extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.book_outlined, color: moodleWhite),
               title: const Text(
-                'My Courses',
+                'My Modules and Courses',
                 style: TextStyle(color: moodleWhite, fontSize: 16),
               ),
               selected: isCourses,
@@ -83,7 +84,7 @@ class NavDrawer extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.assignment_outlined, color: moodleWhite),
               title: const Text(
-                'Assessments',
+                'My Assessments',
                 style: TextStyle(color: moodleWhite, fontSize: 16),
               ),
               selected: isAssessments,
@@ -92,6 +93,21 @@ class NavDrawer extends StatelessWidget {
                 Navigator.pop(context);
                 if (!isAssessments) {
                   Navigator.pushReplacementNamed(context, '/assessments');
+                }
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.calendar_month_outlined, color: moodleWhite),
+              title: const Text(
+                'Calendar',
+                style: TextStyle(color: moodleWhite, fontSize: 16),
+              ),
+              selected: isCalendar,
+              selectedTileColor: Colors.white24,
+              onTap: () {
+                Navigator.pop(context);
+                if (!isCalendar) {
+                  Navigator.pushReplacementNamed(context, '/calendar');
                 }
               },
             ),

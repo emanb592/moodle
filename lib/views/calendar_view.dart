@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:moodle/widgets/nav_drawer.dart';
 import 'package:moodle/constants.dart';
 
-class CoursesView extends StatelessWidget {
-  const CoursesView({Key? key}) : super(key: key);
+class CalendarView extends StatelessWidget {
+  const CalendarView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +122,7 @@ class CoursesView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'My courses',
+                'Calendar',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -130,9 +130,34 @@ class CoursesView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 24),
-              Text(
-                'This is the courses overview page.',
-                style: TextStyle(fontSize: 16, color: moodleTextDark),
+              Card(
+                color: moodleWhite,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: moodleBorder),
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(24.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Calendar Placeholder',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: moodlePurple,
+                        ),
+                      ),
+                      SizedBox(height: 12),
+                      Text(
+                        'This is where your calendar events and deadlines can go.',
+                        style: TextStyle(fontSize: 14, color: moodleTextMuted),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
